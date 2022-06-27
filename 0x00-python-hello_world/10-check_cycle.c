@@ -12,15 +12,14 @@ int check_cycle(listint_t *list)
 {
 	const listint_t *current;
 
+	if(!list)
+		return (0);
+
 	current = list;
 
 	while (current != NULL)
 	{
 		if (current->next == list)
-		{
-			return (1);
-		}
-		else if (current->next == current)
 		{
 			return (1);
 		}
