@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 # Create all alphabet in alternate order
 def alphabet():
     output = ""
@@ -9,12 +11,14 @@ def alphabet():
             output += chr(i + 32)
     return output
 
+
 # Reverse the Alphabet
 def reverse(alphabet):
     str = ""
     for letter in alphabet:
         str = letter + str
     return str
+
 
 # Assign reverse to a variable
 ralpha = reverse(alphabet())
