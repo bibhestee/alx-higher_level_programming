@@ -8,12 +8,10 @@ def cal():
     length = len(argv)
     if length < 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit()
+        exit(1)
     else:
         for i in range(0, 4):
             ch[i] = argv[i]
-
-
         a = int(ch[1])
         sign = ch[2]
         b = int(ch[3])
