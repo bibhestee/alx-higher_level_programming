@@ -44,3 +44,10 @@ Higher level programming day 4
     3. if idx is out of range(> of number of element in my_list), the function should return a copy of the original list
     4. You are not allowed to import any module
     5. You are not allowed to use `try/except`
+### 6. Can you C me now?
+- Write a function that removes all characters `c` and `C` from a string.
+  - Conditions:
+    1. Prototype: `def no_c(my_string):`
+    2. The function should return the new string
+    3. You are not allowed to import any module
+    4. You are not allowed to use `str.eplace()`
