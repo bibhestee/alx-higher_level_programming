@@ -18,3 +18,11 @@ Higher level programming day 4
         3. if idx is out of range(> of number of element in `my_list`), the function should return `None`
         4. You are not allowed to import any module
         5. You are not allowed to use `try/except`
+### 3. Replace element
+    - Write a function that replaces an element of a list at a specific position(like in C).
+      - Conditions:
+        1. Prototype: `def replace_in_list(my_list, idx, element):`
+        2. if idx is negative, the function should not modify anything and returns the original list
+        3. if idx is out of range(> of number of element in my_list), the function should not modify anything, and returns the original list
+        4. You are not allowed to import any module
+        5. You are not allowed to use `try/except`
