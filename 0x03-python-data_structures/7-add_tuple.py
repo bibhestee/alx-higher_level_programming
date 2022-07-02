@@ -8,7 +8,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         b = 0
         a = tuple_a[0]
     # if both are empty
-    elif len(tuple_a) < 1:
+    elif len(tuple_a) < 2:
         a, b = 0, 0
     # if first index is empty
     elif tuple_a[0] == '':
@@ -23,7 +23,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         d = 0
         c = tuple_b[0]
     # if both are empty
-    elif len(tuple_b) < 1:
+    elif len(tuple_b) < 2:
         c, d = 0, 0
     # if first index is empty
     elif tuple_b[0] == '':
