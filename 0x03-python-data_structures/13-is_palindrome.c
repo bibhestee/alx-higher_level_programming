@@ -13,7 +13,7 @@ int is_palindrome(listint_t **head)
 {
 	const listint_t *current;
 	int i = 0;
-	int list[30];
+	int list[100];
 
 	current = *head;
 
@@ -37,20 +37,26 @@ int is_palindrome(listint_t **head)
 
 int checker(int list[], int i)
 {
-	int half_l = i / 2;
-	int x;
-
-	i--;
-	for (x = 0; x != half_l; x++, i--)
+	if (i != 1)
 	{
-		if (list[x] == list[i])
+		int half_l = i / 2;
+		int x;
+
+		i--;
+		for (x = 0; x != half_l; x++, i--)
 		{
-			continue;
+			if (list[x] == list[i])
+			{
+				continue;
+			}
+			else {
+				return (0);
+			}
 		}
-		else {
-			return (0);
-		}
+		return (1);
 	}
-	return (1);
+	else {
+		return (0);
+	}
 }
 
