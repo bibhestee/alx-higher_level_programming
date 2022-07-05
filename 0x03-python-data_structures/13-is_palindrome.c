@@ -1,5 +1,7 @@
+
 #include "lists.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * is_palindrome - Checks if a singly linked list is a palindrome
@@ -23,35 +25,24 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 
-	return (rev_list(list, i));
+	return (checker(list, i));
 }
 
-/**
- * rev_list - Reverse the list and checks if its a palindrome
- * @list: singly linked list
- * @size: list length
- *
- * Return: returns 1 if its a palindrome or 0 if not.
- */
-int rev_list(int list[], int size)
+int checker(int list[], int i)
 {
-	int new_list[size];
-
-	/* Reverse the list and store in new list */
-	for (int i = size - 1, j = 0; i >= 0; i--, j++)
+	int half_l = i / 2;
+	i--;
+	for (int x = 0; x != half_l; x++, i--)
 	{
-		new_list[j] = list[i];
-	}
-
-	/* Check if its a palindrome */
-	for (int i = 0; i < size; i++)
-	{
-		if (new_list[i] == list[i])
-			continue;
-		else
+		if (list[x] == list[i])
 		{
+			printf("%i : %i\n", list[x], list[i]);
+			continue;
+		}
+		else {
 			return (0);
 		}
 	}
 	return (1);
 }
+
