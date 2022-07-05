@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 {
 	const listint_t *current;
 	int i = 0;
-	int list[200];
+	int list[30];
 
 	current = *head;
 
