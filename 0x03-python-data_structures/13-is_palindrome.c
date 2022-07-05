@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * is_palindrome - Checks if a singly linked list is a palindrome
@@ -13,7 +12,7 @@ int is_palindrome(listint_t **head)
 {
 	const listint_t *current;
 	int i = 0;
-	int list[100];
+	int list[200];
 
 	current = *head;
 
