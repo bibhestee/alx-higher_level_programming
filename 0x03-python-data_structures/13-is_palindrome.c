@@ -1,4 +1,3 @@
-
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -28,15 +27,24 @@ int is_palindrome(listint_t **head)
 	return (checker(list, i));
 }
 
+/**
+ * checker - checks if its palindrome or not
+ * @list: singly linked list data
+ * @i: length of the linked list
+ *
+ * Return: return 1 if palindrome or 0 if not
+ */
+
 int checker(int list[], int i)
 {
 	int half_l = i / 2;
+	int x;
+
 	i--;
-	for (int x = 0; x != half_l; x++, i--)
+	for (x = 0; x != half_l; x++, i--)
 	{
 		if (list[x] == list[i])
 		{
-			printf("%i : %i\n", list[x], list[i]);
 			continue;
 		}
 		else {
