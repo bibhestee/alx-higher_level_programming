@@ -4,7 +4,7 @@ from calculator_1 import add, sub, mul, div
 
 
 def cal():
-    ch = ['','','','']
+    ch = ['', '', '', '']
     length = len(argv)
     if length < 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
@@ -25,8 +25,7 @@ def cal():
             print("{} / {} = {}".format(a, b, div(a, b)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
-
-
+            exit(1)
 
 
 if __name__ == "__main__":
