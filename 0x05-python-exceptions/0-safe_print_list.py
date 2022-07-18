@@ -8,6 +8,6 @@ def safe_print_list(my_list=[], x=0):
             else:
                 print(my_list[n])  # Add new line to the last element
             ele += 1
-        return x
+        return ele
     except BaseException:
         return ele
