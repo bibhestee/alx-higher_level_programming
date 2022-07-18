@@ -9,5 +9,5 @@ def safe_print_list(my_list=[], x=0):
                 print(my_list[n])  # Add new line to the last element
             ele += 1
         return x
-    except Exception:
+    except BaseException:
         return ele
