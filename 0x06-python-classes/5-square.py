@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
     This module defines a class Square with
-    private instance, attribute, public instance methods,
+    private instance attribute, public instance methods,
     setter and getter to modify private instance and raise exceptions
 """
 
@@ -57,4 +57,4 @@ class Square:
     def my_print(self):
         """ Prints the square with the character # to the stdout. """
         for i in range(0, self.__size):
-                print("#" * self.__size)
+            print("#" * self.__size)
