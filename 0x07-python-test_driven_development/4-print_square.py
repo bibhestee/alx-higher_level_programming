@@ -1,7 +1,14 @@
 #!/usr/bin/python3
 """
-   This module
+   This module prints a square(#) with specified size
+   and raises exceptions when input is incorrect
+"""
+
+
 def print_square(size):
+    """
+       Prints the square with "#" character
+    """
     if type(size) != int:
         raise TypeError("size must be an integer")
     elif size < 0:
