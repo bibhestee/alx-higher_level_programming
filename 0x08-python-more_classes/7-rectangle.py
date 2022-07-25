@@ -89,10 +89,10 @@ class Rectangle():
         if h == 0 or w == 0:
             return ''
         else:
-            c = self.print_symbol
+            ch = self.print_symbol
             for i in range(0, h - 1):
-                print(str(c) * w)
-            return (str(c) * w)
+                print(str(ch) * w)
+            return (str(ch) * w)
 
     def __repr__(self):
         rp = "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
