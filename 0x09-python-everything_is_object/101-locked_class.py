@@ -6,4 +6,10 @@
 
 
 class LockedClass:
+    """
+       LockedClass - create a locked class
+       Attributes:
+           __slots__ : prevents creation of new instance except
+                       called first_name
+    """
     __slots__ = ["first_name"]
