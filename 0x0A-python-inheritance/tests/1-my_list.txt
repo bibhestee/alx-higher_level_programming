@@ -16,7 +16,7 @@ Import the class required for testing from the module
 
 Start testing with some different inputs
 
-#Create and instance and append some int data to the list
+#Create and instance and append some data to the list
     >>> my_list = MyList()
     >>> my_list.append(3)
     >>> my_list.append(5)
@@ -30,3 +30,11 @@ Start testing with some different inputs
 
     >>> print(my_list)
     [3, 5, 2, 9]
+
+#Create and instance and call the print_sorted method without appending data
+    >>> new_list = MyList()
+    >>> print(new_list)
+    []
+
+    >>> new_list.print_sorted()
+    []
