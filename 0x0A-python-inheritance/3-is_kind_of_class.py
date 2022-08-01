@@ -3,6 +3,7 @@
     Module to check if object is an instance of a specified class
 """
 
+
 def is_kind_of_class(obj, a_class):
     """
       is_kind_of_class - returns true or false if the object is an instance
@@ -14,7 +15,7 @@ def is_kind_of_class(obj, a_class):
     """
     if isinstance(obj, a_class):
         return True
-    elif issubclass(a_class , type(obj)):
+    elif issubclass(a_class, type(obj)):
         return True
     else:
-        return NULL
+        return False
