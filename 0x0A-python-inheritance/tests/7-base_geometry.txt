@@ -1,0 +1,19 @@
+------------------------------------------
+
+      Base Geometry Test File
+
+++++++++++++++++++++++++++++++++++++++++++
+
+This is a test file for the 7-base_geometry module
+
+++++++++++++++++++++++++++++++++++++++++++                 
+ 7-base_geometry - class
+ area c4
+
+------------------------------------------
+Import the class required for testing from the module   
+    >>> MyList = __import__('1-my_list').MyList                                                     
+
+Start testing with some different inputs
+
+#Create an instance
