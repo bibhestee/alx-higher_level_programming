@@ -4,4 +4,9 @@
 """
 
 def is_same_class(obj, a_class):
-    return issubclass(a_class, type(obj))
+    if obj is None:
+        return False
+    elif a_class is None:
+        return False
+    else:
+        return issubclass(a_class, type(obj))
