@@ -16,7 +16,7 @@ Import the class required for testing from the module
 
 Start testing with some different inputs
 
-#Create and instance and append some data to the list
+#Create an instance and append some data to the list
     >>> my_list = MyList()
     >>> my_list.append(3)
     >>> my_list.append(5)
@@ -31,10 +31,27 @@ Start testing with some different inputs
     >>> print(my_list)
     [3, 5, 2, 9]
 
-#Create and instance and call the print_sorted method without appending data
+#Create an instance and call the print_sorted method without appending data
     >>> new_list = MyList()
     >>> print(new_list)
     []
 
     >>> new_list.print_sorted()
     []
+
+#Create an instance and append negative values to the list
+    >>> neg_list = MyList()
+    >>> neg_list.append(-3)
+    >>> neg_list.append(-8)
+    >>> neg_list.append(-2)
+    >>> neg_list.append(-7)
+    >>> neg_list.append(-1)
+    >>> print(neg_list)
+    [-3, -8, -2, -7, -1]
+
+    >>> neg_list.print_sorted()
+    [-8, -7, -3, -2, -1]
+
+    >>> print(neg_list)
+    [-3, -8, -2, -7, -1]
+
