@@ -32,14 +32,12 @@ class Rectangle(BaseGeometry):
        Attributes:
            area(): raise exception
            integer_validator(): validate the input
-       Arguments:
+       Args:
            width (private): width of the rectangle
            height (private): height of the rectangle
     """
     def __init__(self, width, height):
-        if self.integer_validator("width", width):
+        if self.integer_validator("width", width) \
+           and self.integer_validator("height", height):
             self.__width = width
-        elif self.integer_validator("height", height):
             self.__height = height
-        else:
-            pass
