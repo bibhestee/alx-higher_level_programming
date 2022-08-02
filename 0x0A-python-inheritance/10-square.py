@@ -37,14 +37,10 @@ class Rectangle(BaseGeometry):
            height (int): height of the rectangle
     """
     def __init__(self, width, height):
-        try:
-            if self.integer_validator("width", width) \
-               and self.integer_validator("height", height):
-                self.__width = width
-                self.__height = height
-        except Exception as e:
-            print(e)
-            exit()
+        if self.integer_validator("width", width) \
+           and self.integer_validator("height", height):
+            self.__width = width
+            self.__height = height
 
     def __str__(self):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
