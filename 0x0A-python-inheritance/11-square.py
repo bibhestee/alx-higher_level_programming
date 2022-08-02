@@ -45,7 +45,6 @@ class Rectangle(BaseGeometry):
         except Exception as e:
             print(e)
 
-
     def __str__(self):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
