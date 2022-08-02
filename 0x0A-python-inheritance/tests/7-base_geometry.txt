@@ -8,12 +8,34 @@ This is a test file for the 7-base_geometry module
 
 ++++++++++++++++++++++++++++++++++++++++++                 
  7-base_geometry - class
- area c4
+ area()
+ integer_validator()
 
 ------------------------------------------
 Import the class required for testing from the module   
-    >>> MyList = __import__('1-my_list').MyList                                                     
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry                                                     
 
 Start testing with some different inputs
 
 #Create an instance
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("width", 89)
+
+    >>> try:
+    ...     bg.integer_validator("name", "John")
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("age", 0)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [ValueError] age must be greater than 0
+
+    >>> try:
+    ...     bg.integer_validator("distance", -4)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [ValueError] distance must be greater than 0
