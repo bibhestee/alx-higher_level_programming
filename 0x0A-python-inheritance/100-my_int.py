@@ -22,9 +22,13 @@ class MyInt(int):
         return "{}".format(self.__value)
 
     def __eq__(self, other):
-        if other:
+        if other == 0:
+            return True
+        else:
             return False
 
     def __ne__(self, other):
-        if other:
+        if other == 0:
+            return False
+        else:
             return True
