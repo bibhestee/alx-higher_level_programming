@@ -1,3 +1,4 @@
+#!/bin/usr/python3
 """
     module to create MyInt to inherit from int
 """
