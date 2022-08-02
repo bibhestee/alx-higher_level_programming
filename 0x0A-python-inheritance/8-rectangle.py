@@ -3,6 +3,7 @@
    module to create a rectangle from base geometry
 """
 
+
 class BaseGeometry:
     """
        BaseGeometry (class): create a geometry
