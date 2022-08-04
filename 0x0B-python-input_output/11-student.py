@@ -36,6 +36,5 @@ class Student:
             return self.__dict__
 
     def reload_from_json(self, json):
-        self.age = json.get('age')
-        self.last_name = json.get('last_name')
-        self.first_name = json.get('first_name')
+        for k, v in json.items():
+            setattr(self, k, v)
