@@ -110,10 +110,15 @@ class Rectangle(Base):
 
     def display(self):
         """ prints out the rectangle with character # """
+        if self.__y > 0:
+            print("\n" * self.__y, end="")
         for i in range(0, self.__height):
-            print("#" * self.__width)
+            if self.__x > 0:
+                print(" " * self.__x, "#" * self.__width)
+            else:
+                print("#" * self.__width)
 
     def __str__(self):
         """ prints out when instance is called with name """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, \
-                self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                 self.__x, self.__y, self.__width, self.__height)
