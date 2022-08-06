@@ -15,6 +15,7 @@ class Rectangle(Base):
                 area(): calculate area of the rectangle
                 display(): print the retangle with #
                 __str__(): [Rectangle] (<id>) <x>/<y> - <width>/<height>
+                update(): updates the value of id, width, height, x and y
        Args:
            width: width of the rectangle
            height: height of the rectangle
@@ -109,7 +110,7 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
-        """ prints out the rectangle with character # """
+        """ Prints out the rectangle with character # """
         if self.__y > 0:
             print("\n" * self.__y, end="")
         for i in range(0, self.__height):
@@ -119,6 +120,29 @@ class Rectangle(Base):
                 print("#" * self.__width)
 
     def __str__(self):
-        """ prints out when instance is called with name """
+        """ Prints out when instance is called with name """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                  self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """ Updates the value of id, width, height, x and y """
+        if len(args) == 5:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+            self.__y = args[4]
+        if len(args) == 4:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+        if len(args) == 3:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+        if len(args) == 2:
+            self.id = args[0]
+            self.__width = args[1]
+        if len(args) == 1:
+            self.id = args[0]
