@@ -13,11 +13,16 @@ class Rectangle(Base):
                 __x (int): x
                 __y (int): y
                 area(): calculate area of the rectangle
+                display(): print the retangle with #
        Args:
            width: width of the rectangle
            height: height of the rectangle
            x: co-ordinate x
            y: co-ordinate y
+       Raises:
+           TypeError: <name of the attribute> must be an integer
+           ValueError: <name of the attribute> must be > 0
+           ValueError: <name of the attribute> must be >= 0
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -101,3 +106,8 @@ class Rectangle(Base):
     def area(self):
         """ Calculate the area of the rectangle """
         return self.__height * self.__width
+
+    def display(self):
+        """ prints out the rectangle with character # """
+        for i in range(0, self.__height):
+            print("#" * self.__width)
