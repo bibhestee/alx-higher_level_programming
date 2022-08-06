@@ -14,6 +14,7 @@ class Rectangle(Base):
                 __y (int): y
                 area(): calculate area of the rectangle
                 display(): print the retangle with #
+                __str__(): [Rectangle] (<id>) <x>/<y> - <width>/<height>
        Args:
            width: width of the rectangle
            height: height of the rectangle
@@ -111,3 +112,8 @@ class Rectangle(Base):
         """ prints out the rectangle with character # """
         for i in range(0, self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """ prints out when instance is called with name """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, \
+                self.__x, self.__y, self.__width, self.__height)
