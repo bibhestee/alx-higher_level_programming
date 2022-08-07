@@ -17,6 +17,7 @@ class Rectangle(Base):
                 __str__(): [Rectangle] (<id>) <x>/<y> - <width>/<height>
                 update(): updates the value of id, width, height, x and y
                             with args, otherwise kwargs.
+                to_dictionary(): convert attributes to dictionary
        Args:
            width: width of the rectangle.
            height: height of the rectangle.
@@ -163,3 +164,8 @@ class Rectangle(Base):
                 self.__x = kwargs.get("x")
             if kwargs.__contains__("y"):
                 self.__y = kwargs.get("y")
+
+    def to_dictionary(self):
+        """ Return the dictionary representation of attrs """
+        return {'id': self.id, 'width': self.__width, 'height': self.__height,
+                'x': self.__x, 'y': self.__y}
