@@ -8,23 +8,24 @@ class Rectangle(Base):
     """
        Rectangle - Rectangle class
        Attribute:
-                __width (int): width of the rectangle
-                __height (int): height of the rectangle
-                __x (int): x
-                __y (int): y
-                area(): calculate area of the rectangle
-                display(): print the retangle with #
+                __width (int): width of the rectangle.
+                __height (int): height of the rectangle.
+                __x (int): x.
+                __y (int): y.
+                area(): calculate area of the rectangle.
+                display(): print the retangle with #.
                 __str__(): [Rectangle] (<id>) <x>/<y> - <width>/<height>
                 update(): updates the value of id, width, height, x and y
+                            with args, otherwise kwargs.
        Args:
-           width: width of the rectangle
-           height: height of the rectangle
-           x: co-ordinate x
-           y: co-ordinate y
+           width: width of the rectangle.
+           height: height of the rectangle.
+           x: co-ordinate x.
+           y: co-ordinate y.
        Raises:
-           TypeError: <name of the attribute> must be an integer
-           ValueError: <name of the attribute> must be > 0
-           ValueError: <name of the attribute> must be >= 0
+           TypeError: <name of the attribute> must be an integer.
+           ValueError: <name of the attribute> must be > 0.
+           ValueError: <name of the attribute> must be >= 0.
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -121,28 +122,44 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Prints out when instance is called with name """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                 self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                                                       self.__y, self.__width,
+                                                       self.__height)
 
-    def update(self, *args):
-        """ Updates the value of id, width, height, x and y """
-        if len(args) == 5:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
-        if len(args) == 4:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-        if len(args) == 3:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-        if len(args) == 2:
-            self.id = args[0]
-            self.__width = args[1]
-        if len(args) == 1:
-            self.id = args[0]
+    def update(self, *args, **kwargs):
+        """
+           Updates the value of id, width, height, x and y
+           args is used to update when specified, otherwise kwargs is used
+        """
+        if args:
+            if len(args) == 5:
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+                self.__x = args[3]
+                self.__y = args[4]
+            if len(args) == 4:
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+                self.__x = args[3]
+            if len(args) == 3:
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+            if len(args) == 2:
+                self.id = args[0]
+                self.__width = args[1]
+            if len(args) == 1:
+                self.id = args[0]
+        else:
+            if kwargs.__contains__("id"):
+                self.id = kwargs.get("id")
+            if kwargs.__contains__("width"):
+                self.__width = kwargs.get("width")
+            if kwargs.__contains__("height"):
+                self.__height = kwargs.get("height")
+            if kwargs.__contains__("x"):
+                self.__x = kwargs.get("x")
+            if kwargs.__contains__("y"):
+                self.__y = kwargs.get("y")
