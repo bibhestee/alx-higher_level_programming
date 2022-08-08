@@ -2,6 +2,7 @@
    Module to create a base class
 """
 from json import dumps, loads
+import csv
 
 
 class Base:
@@ -15,6 +16,8 @@ class Base:
                   create(): create an instance from dictionary
                   load_from_file(): create new instances from file
                   save_to_file(): save JSON string to file
+                  load_from_file_csv(): create new instance from csv file
+                  save_to_file_csv(): save JSON string to a csv file
        Args:
             id (int): id number of instance
             __nb_objects (int): nb of instance(objects)
@@ -63,7 +66,7 @@ class Base:
             list_objs = cls.from_json_string(dict)
             # Create a list of new instances updated with list_objs
             return [cls.create(**item) for item in list_objs]
-        except:
+        except Exception:
             return []
 
     @classmethod
@@ -84,3 +87,34 @@ class Base:
         # Write JSON string to the file(filename)
         with open(filename, "w", encoding="utf-8") as f:
             f.write(j_str)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Create new instances from csv file """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as f:
+                reader = csv.reader(f)
+                # Not working yet...Unable to load correct output
+            # Create a list of new instances updated with list_objs
+            return [cls.create(**item) for item in reader]
+        except Exception:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+           save_to_file_csv - write JSON string representation of list_objs
+                              to a file
+        """
+        if list_objs:
+            # Convert the instances to a dictionary
+            dict = [item.to_dictionary() for item in list_objs]
+        else:
+            dict = []
+        # Get filename from instance magic method
+        filename = cls.__name__ + ".csv"
+        # Write JSON string to the file(filename)
+        with open(filename, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(dict)
