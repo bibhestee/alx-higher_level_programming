@@ -11,8 +11,9 @@ class Base:
                   __nb_objects (int): number of instance
                   id (int): id number of instance
                   to_json_string(): convert dict to JSON string
-                  save_to_file(): save JSON string to file
                   from_json_string(): deserialize JSON string
+                  create(): create an instance from dictionary
+                  save_to_file(): save JSON string to file
        Args:
             id (int): id number of instance
             __nb_objects (int): nb of instance(objects)
@@ -41,6 +42,14 @@ class Base:
             return loads(json_string)
         else:
             return []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Create new instance from dictionary """
+        # Create a dummy instance in order to use the update method
+        r = cls(2, 3, 0, 0)
+        r.update(**dictionary)
+        return r
 
     @classmethod
     def save_to_file(cls, list_objs):
