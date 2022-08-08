@@ -13,6 +13,7 @@ class Base:
                   to_json_string(): convert dict to JSON string
                   from_json_string(): deserialize JSON string
                   create(): create an instance from dictionary
+                  load_from_file(): create new instances from file
                   save_to_file(): save JSON string to file
        Args:
             id (int): id number of instance
@@ -47,9 +48,23 @@ class Base:
     def create(cls, **dictionary):
         """ Create new instance from dictionary """
         # Create a dummy instance in order to use the update method
-        r = cls(2, 3, 0, 0)
+        r = cls(2, 2)
         r.update(**dictionary)
         return r
+
+    @classmethod
+    def load_from_file(cls):
+        """ Create new instances from file """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                dict = f.read()
+            # Deserialize file contents
+            list_objs = cls.from_json_string(dict)
+            # Create a list of new instances updated with list_objs
+            return [cls.create(**item) for item in list_objs]
+        except:
+            return []
 
     @classmethod
     def save_to_file(cls, list_objs):
