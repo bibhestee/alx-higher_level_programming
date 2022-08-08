@@ -1,7 +1,7 @@
 """
    Module to create a base class
 """
-from json import dumps
+from json import dumps, loads
 
 
 class Base:
@@ -10,8 +10,9 @@ class Base:
        Attributes:
                   __nb_objects (int): number of instance
                   id (int): id number of instance
-                  to_json_string(): convert dict to json string
-                  save_to_file(): save json string to file
+                  to_json_string(): convert dict to JSON string
+                  save_to_file(): save JSON string to file
+                  from_json_string(): deserialize JSON string
        Args:
             id (int): id number of instance
             __nb_objects (int): nb of instance(objects)
@@ -33,10 +34,18 @@ class Base:
         else:
             return "[]"
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ Deserialize JSON string """
+        if json_string:
+            return loads(json_string)
+        else:
+            return []
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
-           save_to_file - write json string representation of list_objs
+           save_to_file - write JSON string representation of list_objs
                           to a file
         """
         if list_objs:
@@ -48,6 +57,6 @@ class Base:
         j_str = cls.to_json_string(dict)
         # Get filename from instance magic method
         filename = cls.__name__ + ".json"
-        # Write json string to the file(filename)
+        # Write JSON string to the file(filename)
         with open(filename, "w", encoding="utf-8") as f:
             f.write(j_str)
