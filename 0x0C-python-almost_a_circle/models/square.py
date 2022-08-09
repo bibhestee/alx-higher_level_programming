@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
    module to create a square class from rectangle
 """
