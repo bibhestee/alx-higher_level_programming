@@ -15,6 +15,8 @@ def select_states(MY_USER, MY_PASS, MY_DB):
     items = cur.fetchall()
     for item in items:
         print(item)
+    cur.close()
+    database.close()
 
 
 if __name__ == "__main__":
