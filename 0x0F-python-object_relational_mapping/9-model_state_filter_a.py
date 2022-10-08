@@ -25,7 +25,7 @@ def model_state_filter_a():
     # An Engine, which the Session will use for connection resources
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
                             arg_1, arg_2, arg_3, pool_pre_ping=True))
-    # Activate the engine with Base Clase
+    # Activate the engine with Base Class
     Base.metadata.create_all(engine)
 
     # Configure the session class
