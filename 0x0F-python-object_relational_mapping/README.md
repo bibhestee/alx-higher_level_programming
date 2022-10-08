@@ -43,3 +43,34 @@ $ python3
 >>> sqlalchemy.__version__ 
 '1.4.22'
 ```
+
+
+## USEFULL INFORMATIONS 
+
+### Process to Create a new table class
+- import create_engine, declarative_base
+- Create a the table class that inherit from declarative_base class
+    ```
+        Base = declarative_base
+        Table(Base)...
+    ```
+- Create an Engine that activate your orm to database
+    for sqlalchemy
+    `engine = create_engine('myslq+myslqdb://<user>:<pass>@localhost/<db>)`
+
+- Start the engine to create the table and it ignores if its created already
+    `Base.metadata.create_all(engine)`
+
+### Process to Initiate a session
+- After the successful creation of engine then create a session instance
+    ```
+    Session = sessionmaker()
+    session = Session(engine)`
+    or 
+     first configure the session class then create an instance
+    ```
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    ```
+- Or Use `Session.configure(bind=engine)` if engine was created later
+
