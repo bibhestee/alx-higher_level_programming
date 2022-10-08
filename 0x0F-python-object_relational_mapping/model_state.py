@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
     This script define a class of a State and an instance
     Base = declarative_base()
