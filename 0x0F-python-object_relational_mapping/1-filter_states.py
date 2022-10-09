@@ -6,9 +6,15 @@
 """
 
 
-def filter_states(MY_USER, MY_PASS, MY_DB):
-    """ Function that filter and print the states """
+def filter_states():
+    """
+        Function that filter and print the states
+    """
     import MySQLdb
+    import sys
+    MY_USER = sys.argv[1]
+    MY_PASS = sys.argv[2]
+    MY_DB = sys.argv[3]
 
     database = MySQLdb.connect(user=MY_USER, passwd=MY_PASS, db=MY_DB)
     cur = database.cursor()
@@ -16,14 +22,11 @@ def filter_states(MY_USER, MY_PASS, MY_DB):
     WHERE name LIKE 'N%' ORDER BY states.id ASC;""")
     items = cur.fetchall()
     for item in items:
-        print(item)
+        if item[1][0] == 'N':
+            print(item)
     cur.close()
     database.close()
 
 
 if __name__ == "__main__":
-    import sys
-    usr = sys.argv[1]
-    pwd = sys.argv[2]
-    db = sys.argv[3]
-    filter_states(usr, pwd, db)
+    filter_states()
