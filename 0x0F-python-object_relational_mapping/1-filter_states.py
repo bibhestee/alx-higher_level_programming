@@ -12,7 +12,8 @@ def filter_states(MY_USER, MY_PASS, MY_DB):
 
     database = MySQLdb.connect(user=MY_USER, passwd=MY_PASS, db=MY_DB)
     cur = database.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%';")
+    cur.execute("""SELECT * FROM states
+    WHERE name LIKE 'N%' ORDER BY states.id ASC;""")
     items = cur.fetchall()
     for item in items:
         print(item)
