@@ -15,7 +15,8 @@ def my_safe_filter_states(MY_USER, MY_PASS, MY_DB, NAME):
     cur.execute('SELECT * FROM states WHERE name = \'{}\';'.format(NAME))
     items = cur.fetchall()
     for item in items:
-        print(item)
+        if item[1][0] == NAME[0]:
+            print(item)
     cur.close()
     database.close()
 
