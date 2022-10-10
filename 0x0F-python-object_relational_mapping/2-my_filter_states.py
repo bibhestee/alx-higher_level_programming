@@ -16,7 +16,8 @@ def my_filter_states(MY_USER, MY_PASS, MY_DB, NAME):
     WHERE name = \'{}\' ORDER BY states.id ASC;""".format(NAME))
     items = cur.fetchall()
     for item in items:
-        print(item)
+        if item[1][0] == NAME[0]:
+            print(item)
     cur.close()
     database.close()
 
