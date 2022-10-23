@@ -7,10 +7,13 @@
 def find_peak(list_of_integers):
     """ Get lists of integers and return the peak """
     if list_of_integers:
-        nums = len(list_of_integers)
+        """
         peak = 0
-        for i in range(nums):
-            if list_of_integers[i] > peak:
-                peak = list_of_integers[i]
+        for num in list_of_integers:
+            if num > peak:
+                peak = num
+        """
+        list_of_integers.sort()
+        peak = list_of_integers[-1]
         return peak
     return None
