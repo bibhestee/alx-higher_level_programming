@@ -17,6 +17,6 @@ def hbtn_status():
 if __name__ == '__main__':
     html = hbtn_status()
     print("Body response:")
-    print(f"- type:{type(html)}")
-    print(f"- content:{html}")
-    print(f"- utf8 content:{html.decode('UTF-8')}")
+    print(f"-  type: {type(html)}")
+    print(f"-  content: {html}")
+    print(f"-  utf8 content: {html.decode('UTF-8')}")
