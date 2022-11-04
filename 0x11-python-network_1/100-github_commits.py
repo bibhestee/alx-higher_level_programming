@@ -23,14 +23,15 @@ def github_commit():
     response = requests.get(url)
     commits = response.json()
 
-    count = 0
-    for item in commits:
-        if count == 10:
-            return
-        sha = item.get('sha')
-        author = item.get('commit').get('author').get('name')
-        print(f'{sha}: {author}')
-        count += 1
+    print(commits)
+#    count = 0
+#    for item in commits:
+#        if count == 10:
+#            return
+#        sha = item.get('sha')
+#        author = item.get('commit').get('author').get('name')
+#        print(f'{sha}: {author}')
+#        count += 1
 
 
 if __name__ == "__main__":
