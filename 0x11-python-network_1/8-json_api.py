@@ -34,7 +34,7 @@ def json_api():
             name = content.get('name')
             id = content.get('id')
             print(f"[{id}] {name}")
-    except Exceptions:
+    except Exception:
         print("Not a valid JSON")
 
 
