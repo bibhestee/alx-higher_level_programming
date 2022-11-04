@@ -26,16 +26,16 @@ def json_api():
 
     # Post a request to the api
     response = requests.post(url, data=data)
-    content = response.json()
-    if not content:
-        print("No result")
-    else:
-        name = content.get('name')
-        id = content.get('id')
-        if not name or not id:
-            print("Not a valid JSON")
+    try:
+        content = response.json()
+        if not content:
+            print("No result")
         else:
+            name = content.get('name')
+            id = content.get('id')
             print(f"[{id}] {name}")
+    except JSONDecodeError:
+        print("Not a valid JSON")
 
 
 if __name__ == "__main__":
