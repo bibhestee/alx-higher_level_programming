@@ -8,7 +8,7 @@ const string = process.argv[3];
 
 if (!filename) { filename = ''; }
 
-fs.writeFile(filename, 'utf8', string, (err, data) => {
+fs.writeFile(filename, string, (err, data) => {
   if (err) {
     console.error(err);
   }
