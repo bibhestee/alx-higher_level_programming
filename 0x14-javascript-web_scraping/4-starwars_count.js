@@ -15,8 +15,10 @@ request.get(url, (err, response, body) => {
     let count = 0;
     for (let i = 0; i < object.count; i++) {
       const characters = results[i].characters;
-      if (characters.find(person => person === 'https://swapi-api.hbtn.io/api/people/18/')) {
-        count++;
+      for (let j = 0; j < characters.length; j++) {
+        if (characters[j].match(18)) {
+          count++;
+        }
       }
     }
     console.log(count);
