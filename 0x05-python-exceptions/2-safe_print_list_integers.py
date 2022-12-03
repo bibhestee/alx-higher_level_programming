@@ -14,5 +14,7 @@ def safe_print_list_integers(my_list=[], x=0):
                 print("{:d}".format(my_list[n]))  # Add new line to the last num_of_elementment
                 num_of_element += 1
         return num_of_element
+    except IndexError:
+        return num_of_element
     except BaseException:
         return num_of_element
