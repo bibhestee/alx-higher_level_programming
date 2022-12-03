@@ -17,4 +17,4 @@ def safe_print_list_integers(my_list=[], x=0):
                 num_of_element += 1
         return num_of_element
     except BaseException:
-        return num_of_element
+        return
