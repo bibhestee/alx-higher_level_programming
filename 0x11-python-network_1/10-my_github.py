@@ -16,5 +16,6 @@ def my_github():
     response = requests.get('https://api.github.com/user', auth=basic)
     print(response.json().get('id'))
 
+
 if __name__ == "__main__":
     my_github()
