@@ -10,16 +10,11 @@ def my_github():
 
     import sys
     import requests
+    from requests.auth import HTTPBasicAuth
 
-    usr = sys.argv[1]
-    pwd = sys.argv[2]
-    url = f"https://api.github.com/users/{usr}"
-
-    response = requests.get(url, auth=(usr, pwd))
-    data = response.json()
-    id = data.get('id')
-    print(id)
-
+    basic = HTTPBasicAuth(sys.argv[1], sys.argv[2])
+    response = requests.get('https://api.github.com/user', auth=basic)
+    print(response.json().get('id'))
 
 if __name__ == "__main__":
     my_github()
